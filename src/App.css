@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+:root {
+  --headerBg: #eb5757;
+  --borderColor: #e0e0e0;
+  --todoFontCOlor: #333333;
+  --iconColor: #828282;
+}
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+/*header navbar  */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 15px;
+  background-color: var(--headerBg);
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+}
+nav h1 {
+  margin: 0;
+}
+
+/* container */
+.container {
+  max-width: 547.5px;
+  margin: 0px auto;
+}
+
+/* input */
+
+.input-field {
+  display: flex;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.input-field .plus-icon {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 10px;
+  left: 6px;
+  color: var(--headerBg);
+}
+.container input[type="text"] {
+  width: 100%;
+  color: var(--headerBg);
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  margin-left: 9px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1;
+  font-size: 16px;
+}
+
+/* todo items */
+.todo-wrapper {
+  margin-top: 10px;
+  padding: 0;
+}
+
+.todo-items {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+
+  padding: 0;
+  cursor: pointer;
+  margin: 5px 0px;
+}
+.todo-items p {
+  flex: 4;
+  color: var(--todoFontCOlor);
+  padding: 6px;
+  font-size: 18px;
+}
+.todo-items .trash-icon {
+  flex: 1;
+  margin: 0;
+  padding: 5px;
+  color: #828282;
+  text-align: right;
+  visibility: hidden;
+
+  font-size: 20px;
+}
+.todo-items:hover .trash-icon {
+  visibility: visible;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* line through grey text on completion*/
+.completed {
+  text-decoration: line-through !important;
+  color: var(--iconColor) !important;
 }
