@@ -9,6 +9,7 @@ const Spinner = () => {
         width="130px"
         height="130px"
         style={{ margin: "auto" }}
+        alt="loading"
       />
     </div>
   );

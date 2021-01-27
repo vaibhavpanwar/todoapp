@@ -175,5 +175,6 @@ input[type="checkbox"]:checked::after {
   }
   .trash-icon {
     visibility: visible !important;
+    font-size: 30px !important;
   }
 }

@@ -45,7 +45,7 @@ const Todo = () => {
     }
 
     // eslint-disable-next-line
-  }, [loading, complete, unComplete]);
+  }, [loading]);
 
   return (
     <section className="container">

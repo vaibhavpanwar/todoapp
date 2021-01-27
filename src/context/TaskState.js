@@ -167,7 +167,6 @@ const TaskState = (props) => {
   //to mark as incomplete
 
   const unCompleteTask = async (id) => {
-    console.log("uncomp", id);
     const config = {
       headers: {
         "Content-Type": "application/json",
