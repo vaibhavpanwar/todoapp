@@ -4,6 +4,7 @@
   --todoFontCOlor: #333333;
   --iconColor: #828282;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -22,13 +23,20 @@ nav {
   background-color: var(--headerBg);
   width: 100%;
   color: #fff;
+  height: 60px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+
+  z-index: 3;
 }
+
 nav h1 {
   margin: 0;
 }
 
 /* container */
+
 .container {
   max-width: 547.5px;
   margin: 0px auto;
@@ -39,6 +47,54 @@ nav h1 {
 .input-field {
   display: flex;
   border-bottom: 1px solid var(--borderColor);
+  position: fixed;
+  top: 60px;
+  width: 547.5px;
+  margin-top: 0;
+
+  z-index: 2;
+  background-color: #fff;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 1px solid var(--todoFontCOlor);
+  border-radius: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.check-icon {
+  position: relative;
+  top: 0px;
+  right: 21px;
+  color: white;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* check icon to be visible when input is checked */
+
+#icon-visible {
+  visibility: visible !important;
+  pointer-events: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--headerBg);
+  border: none;
+  outline: none;
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
 }
 
 .input-field .plus-icon {
@@ -49,6 +105,7 @@ nav h1 {
   left: 6px;
   color: var(--headerBg);
 }
+
 .container input[type="text"] {
   width: 100%;
   color: var(--headerBg);
@@ -60,7 +117,6 @@ nav h1 {
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: red;
   opacity: 1;
   font-size: 16px;
@@ -68,8 +124,8 @@ nav h1 {
 
 /* todo items */
 .todo-wrapper {
-  margin-top: 10px;
   padding: 0;
+  margin-top: 50px;
 }
 
 .todo-items {
@@ -79,14 +135,18 @@ nav h1 {
 
   padding: 0;
   cursor: pointer;
+  transition: 0.6s ease-in;
+
   margin: 5px 0px;
 }
+
 .todo-items p {
   flex: 4;
   color: var(--todoFontCOlor);
   padding: 6px;
   font-size: 18px;
 }
+
 .todo-items .trash-icon {
   flex: 1;
   margin: 0;
@@ -97,12 +157,23 @@ nav h1 {
 
   font-size: 20px;
 }
+
 .todo-items:hover .trash-icon {
   visibility: visible;
 }
 
 /* line through grey text on completion*/
+
 .completed {
   text-decoration: line-through !important;
   color: var(--iconColor) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+  .trash-icon {
+    visibility: visible !important;
+  }
 }

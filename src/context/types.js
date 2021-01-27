@@ -1,0 +1,9 @@
+export const FETCH_TASKS = "FETCH_TASKS";
+export const REQUEST = "REQUEST";
+export const ADD_TASK = "ADD_TASK";
+export const UPDATE_TASK = "UPDATE_TASK";
+export const UPDATE_INPUT = "UPDATE_INPUT";
+export const DELETE_TASK = "DELETE_TASK";
+export const COMPLETE_TASK = "COMPLETE_TASK";
+export const UNCOMPLETE_TASK = "UNCOMPLETE_TASK";
+export const FAIL = "FAIL";
